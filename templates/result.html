@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ApocalypsePrep - Results for {{ data.city }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">
+  🌍 ApocalypsePrep: {{ data.city if not data.error else city }}
+  {% if not data.error %}, {{ data.country }}{% endif %}
+</h1>
+
+
+    {% if data.error %}
+      <p class="error">{{ data.error }}</p>
+      <img src="{{ data.cat }}" alt="Fallback Cat" class="cat-image">
+    {% else %}
+
+      <div class="cards">
+        <div class="card weather">
+          <h2>🌤️ Weather</h2>
+          <p><strong>Condition:</strong> {{ data.weather.condition }}</p>
+          <p><strong>Temp:</strong> {{ data.weather.temperature }}°C</p>
+          <p><strong>Feels Like:</strong> {{ data.weather.feels_like }}°C</p>
+          <p><strong>Humidity:</strong> {{ data.weather.humidity }}%</p>
+        </div>
+
+        <div class="card aqi">
+          <h2>🌫️ Air Quality</h2>
+          <p><strong>AQI:</strong> {{ data.air_quality.aqi }}</p>
+          <p><strong>Main Pollutant:</strong> {{ data.air_quality.main_pollutant }}</p>
+          <canvas id="aqiChart"></canvas>
+        </div>
+
+        <div class="card covid">
+          <h2>🦠 COVID Stats</h2>
+          <p><strong>Active:</strong> {{ data.covid.active }}</p>
+          <p><strong>Total:</strong> {{ data.covid.total }}</p>
+          <p><strong>Critical:</strong> {{ data.covid.critical }}</p>
+          <canvas id="covidChart"></canvas>
+        </div>
+
+        <div class="card threat">
+          <h2>⚠️ Threat Level: {{ data.threat.level }}</h2>
+          <p><strong>Score:</strong> {{ data.threat.score }}</p>
+          <ul>
+            {% for tip in data.threat.tips %}
+              <li>💡 {{ tip }}</li>
+            {% endfor %}
+          </ul>
+          <canvas id="threatPie"></canvas>
+        </div>
+      </div>
+
+      <script>
+        const aqi = {{ data.air_quality.aqi | tojson }};
+        const threatScore = {{ data.threat.score | tojson }};
+        const covid = {{ data.covid | tojson }};
+      </script>
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    {% endif %}
+
+    <a href="/" class="back-button">🔙 Try another city</a>
+  </div>
+</body>
+</html>
