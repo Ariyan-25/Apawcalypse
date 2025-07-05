@@ -62,7 +62,7 @@ Used for Text to Speech conversion.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Ariyan-25/apawcalypse.git
+   git clone https://github.com/Ariyan-25/apawcalypse2.git
    cd apawcalypse
 
 2. Create a .env file and paste
