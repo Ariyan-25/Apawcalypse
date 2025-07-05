@@ -40,7 +40,9 @@ Used for Text to Speech conversion.
 
 ## Screenshots
 
+![1](./screenshots/cat1.png)
 
+![1](./screenshots/cat2.png)
  
 ![1](./screenshots/homepage.png)
 
