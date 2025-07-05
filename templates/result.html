@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apocalypse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body class="result-container">
+  <h1>Apocalypse Dashboard</h1>
+
+  {% if data.error %}
+    <div class="section error">
+      <h2>{{ data.error }}</h2>
+      <img src="{{ data.cat }}" alt="Cute cat fallback" class="cat-img">
+    </div>
+  {% else %}
+    <div class="section location">
+      <h2> {{ data.city }}, {{ data.country }}</h2>
+    </div>
+
+    {% if data.weather %}
+    <div class="section">
+      <h3> Weather</h3>
+      <p>Temperature: {{ data.weather.temperature }} °C</p>
+      <p>Feels Like: {{ data.weather.feels_like }} °C</p>
+      <p>Condition: {{ data.weather.condition }}</p>
+      <p>Humidity: {{ data.weather.humidity }}%</p>
+    </div>
+    {% endif %}
+
+    {% if data.air_quality %}
+    <div class="section">
+      <h3> Air Quality</h3>
+      <p>AQI (US): {{ data.air_quality.aqi }}</p>
+      <p>Main Pollutant: {{ data.air_quality.main_pollutant }}</p>
+    </div>
+    {% endif %}
+
+    {% if data.covid %}
+    <div class="section">
+      <h3> COVID-19 Stats</h3>
+      <p>New Cases Today: {{ data.covid.cases }}</p>
+      <p>New Deaths Today: {{ data.covid.deaths }}</p>
+      <p>Active Cases: {{ data.covid.active }}</p>
+      <p>Critical Cases: {{ data.covid.critical }}</p>
+      <p>Total Cases: {{ data.covid.total }}</p>
+    </div>
+    {% endif %}
+
+    {% if data.threat %}
+    <div class="section threat-box">
+      <h3> Apocalypse Threat Score</h3>
+      <p><strong>{{ data.threat.score }}</strong> / 100</p>
+      <p>Level: <span class="threat-level">{{ data.threat.level }}</span></p>
+      <div>
+  <p>Tips:</p>
+  <ul>
+    {% for tip in data.threat.tips %}
+      <li> {{ tip }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+    </div>
+    {% endif %}
+
+    {% if data.air_quality %}
+    <script>
+      const aqi = {{ data.air_quality.aqi | tojson }};
+      const city = {{ data.city | tojson }};
+      // You can use this for AQI graph visualization
+      console.log("AQI Data:", aqi);
+    </script>
+    {% endif %}
+
+  {% endif %}
+
+  <div class="footer">
+    <a href="{{ url_for('index') }}"> Back to Home</a>
+  </div>
+</body>
+</html>

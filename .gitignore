@@ -1,3 +1,16 @@
+<<<<<<< HEAD
 .env
 
 __pycache__cd 
+=======
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+.env
+
+
+temp
+>>>>>>> 88d6b8f9d6bd7591f135217a0081c89b21f9959a

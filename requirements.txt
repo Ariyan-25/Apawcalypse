@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 flask
 requests
 gunicorn
 flask_cors
 python-dotenv
+=======
+Flask
+requests
+python-dotenv
+>>>>>>> 88d6b8f9d6bd7591f135217a0081c89b21f9959a
