@@ -11,11 +11,12 @@
 | **Creative 404/Error Handling**     | Fallback cute cat image in case the city data is not available        | Easy              |
 | **Dark Mode Support**               | Creative UI with Persistent light and dark modes                      | Easy                |
 | **Custom Loading States**           | A theme related loading spinner and some random cat facts             | Easy              |
-| **Dynamic Theming based on API data**| The color of the result page chnages according to the score calculated | Medium              |
+| **Dynamic Theming based on API data**| The color of the result page changes according to the score calculated | Medium              |
 | **Multilingual Support**            | Supports multiple languages for the users                             | Medium              |
-| **The Story Mode**                  | It follow a fun cat story                                             | Medium                |
+| **The Story Mode**                  | It follow a fun cat story (watch the demo video to know more 🐱)         | Medium                |
 | **Text to Speech**                  | An option that allows users to listen to the output data on the results page |Hard            |
-
+| **Accessibility Features**          | Our website supports only such colors that can be seen by anyone including visually impaired people |Hard            |
+ 
 
 ---
 
