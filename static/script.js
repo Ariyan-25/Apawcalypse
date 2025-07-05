@@ -69,3 +69,5 @@ new Chart(ctxThreat, {
     }
   }
 });
+
+
