@@ -1,6 +1,6 @@
 #  APAWCALYPSE
 
-**APAWCALYPSE** is a safety dashboard that helps users assess real-time environmental and health threats in any city around the world. From pollution to pandemics, the app calculates a threat score and provides survival tips — and when things go wrong, it sends you a cat. 🐱
+**APAWCALYPSE** is a safety dashboard that helps users assess real-time environmental and health threats in any city around the world. From pollution to pandemics, the app calculates a threat score and provides survival tips and when things go wrong, it sends you a cat. 🐱
 
 ---
 
