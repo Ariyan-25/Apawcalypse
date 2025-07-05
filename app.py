@@ -3,7 +3,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 import os
 import requests
-from utils.threat_score import compute_threat_score
+from backend.utils.threat_score import compute_threat_score
 
 load_dotenv()
 
