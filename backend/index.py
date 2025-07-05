@@ -118,11 +118,11 @@ def get_city_info():
     result = get_all_city_data(city_input)
     return jsonify(result)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
-from vercel_wsgi import handle_request
+# from vercel_wsgi import handle_request
 
-def handler(environ, start_response):
-    return handle_request(app, environ, start_response)
+# def handler(environ, start_response):
+#     return handle_request(app, environ, start_response)

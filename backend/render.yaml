@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: apawcalypse-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn index:app
+    rootDir: backend
+    envVars:
+      - key: RAPIDAPI_KEY
+        value: your_key_here
+      - key: WEATHERAPI_KEY
+        value: your_key_here
+      - key: AIRVISUAL_KEY
+        value: your_key_here
+      - key: CAT_API_KEY
+        value: your_key_here
