@@ -59,7 +59,7 @@ Used for Text to Speech conversion.
 
 ![6](./screenshots/high.png)
 
-![7](./screenshots/Screenshot 2025-08-12 102446.png)
+![7](./screenshots/failed_cat.png)
 
 ---
 
